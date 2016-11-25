@@ -1,0 +1,47 @@
+Use case 1:
+
+To get all the details from the transaction amount detail that is greater than with a specific amount which the user wants.
+
+Execution Query:
+select * from Ecom1 where amt>160;
+
+Use case 2:
+ 
+Count all the transaction where amount is between 175 to 200.
+
+
+Execution Query:
+
+select * from Ecom1 where amt between 175 and 200
+ 
+ 
+Use case 3:
+ 
+Calculate the total sum and total count and average of all the transaction for each user id. 
+
+
+ Execution Query:
+select uid,sum(amt),count(amt),avg(amt) from Ecom1 group by uid
+ 
+Use case 4:
+ 
+Find the name of user who has spend the maximum amount.
+
+Execution Query:
+
+select a.uid,SUM(a.amt) as Res,b.fname from ecom1 a join cust b on a.uid=b.uid group by a.uid,b.fname order by Res DESC limit 1;
+
+Use case 5:
+	Find the name and product category for each user id and print in ascending order by product category. 
+
+Execution Query:
+	Select cust.fname, transaction.cat from cust inner join transaction on cust.id=transaction.id order by transaction .cat;
+
+
+
+
+
+
+
+
+
